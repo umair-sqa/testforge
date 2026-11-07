@@ -1,6 +1,6 @@
 # CI/CD
 
-The included GitHub Actions workflow installs all Playwright browsers, runs TypeScript checks, linting, formatting checks and the full API plus cross-browser UI suite. It currently uses `npm install` because this development archive does not ship a generated lockfile. Generate and commit `package-lock.json` before production use, then switch CI and Docker to `npm ci`. The workflow uploads HTML, JUnit, JSON and test artifacts even when tests fail.
+The included GitHub Actions workflow installs all Playwright browsers, runs TypeScript checks, linting, formatting checks, the Node.js-only demo API smoke suite and the full API plus cross-browser UI suite. It currently uses `npm install` because this development archive does not ship a generated lockfile. Generate and commit `package-lock.json` before production use, then switch CI and Docker to `npm ci`. The workflow uploads HTML, JUnit, JSON and test artifacts even when tests fail.
 
 ## Repository setup
 
@@ -15,4 +15,4 @@ Start with conservative CI worker counts. Increase only after verifying that tes
 
 ## Jenkins
 
-See `docs/JENKINS.md` and the root `Jenkinsfile`. The sample pipeline requires the Jenkins NodeJS plugin with a tool installation named `Node22`. Generate and commit the lockfile before replacing `npm install` with `npm ci`.
+See `docs/JENKINS.md`, the root `Jenkinsfile` and `docs/RELEASE-HANDOFF.md` for the lockfile and release handoff steps. The sample pipeline requires the Jenkins NodeJS plugin with a tool installation named `Node22`. Generate and commit the lockfile before replacing `npm install` with `npm ci`.

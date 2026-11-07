@@ -34,6 +34,8 @@ jobs:
         run: npm run lint
       - name: Check formatting
         run: npm run format:check
+      - name: Smoke-test the bundled demo API
+        run: npm run smoke:demo
       - name: Run API and cross-browser UI suites
         run: npm test
       - name: Upload test artifacts

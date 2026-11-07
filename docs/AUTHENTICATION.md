@@ -4,7 +4,7 @@ TestForge includes a setup project that signs in once and saves browser storage 
 
 ## Included demo application
 
-The demo app uses `localStorage` to keep the example small. The setup test opens `/login`, signs in using `TEST_USER_EMAIL` and `TEST_USER_PASSWORD`, verifies the dashboard, then saves storage state.
+The demo app uses `localStorage` to keep the example small. The setup test opens `/login`, signs in using `TEST_USER_EMAIL` and `TEST_USER_PASSWORD`, verifies the dashboard, then saves storage state. The demo login is intentionally insecure: credentials are checked in browser-side JavaScript and the authentication flag is stored in `localStorage`. It is only a test fixture and must never be deployed as real authentication or exposed as a public service.
 
 ## Adapt to your application
 

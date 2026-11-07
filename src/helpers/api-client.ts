@@ -22,7 +22,11 @@ export class ApiClient {
     return this.request.put(this.endpoint(path), { ...options, data });
   }
 
-  patch(path: string, data?: unknown, options?: Omit<RequestOptions, 'data'>): Promise<APIResponse> {
+  patch(
+    path: string,
+    data?: unknown,
+    options?: Omit<RequestOptions, 'data'>,
+  ): Promise<APIResponse> {
     return this.request.patch(this.endpoint(path), { ...options, data });
   }
 

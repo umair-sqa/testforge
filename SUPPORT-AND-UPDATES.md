@@ -2,9 +2,12 @@
 
 ## Included
 
-- Access to published maintenance releases and bug-fix releases for the purchased major version, delivered through the original storefront or the documented download channel.
+- Access to published maintenance releases and bug-fix releases for the purchased major version for the lifetime of that major version.
 - Corrections to documentation and examples where the published package contains an objectively reproducible defect.
-- Release notes describing material changes and known limitations.
+- Release notes describing material changes, compatibility notes and known limitations.
+- Updates delivered through the original Gumroad product/library mechanism.
+
+A later major version is not included automatically. It may be offered as a separate purchase or under separately published terms.
 
 ## Not included
 
@@ -20,8 +23,8 @@ The purchaser should provide the TestForge version, Node.js version, operating s
 
 ## Update delivery
 
-Release notes and the current approved archive will be published through the storefront product update mechanism. Buyers should retain their purchase receipt and use the same account used for purchase to access updates.
+Release notes and approved archives will be published through the Gumroad product update mechanism. Buyers should retain their purchase receipt and use the same Gumroad account used for purchase to access product updates.
 
 ## Policy status
 
-This is a commercial policy draft. Confirm the final wording against each storefront's terms and applicable consumer-protection requirements before publication.
+This policy remains a draft until reviewed against Gumroad's current terms and applicable consumer-protection requirements.

@@ -2,7 +2,7 @@
 
 ## Product summary
 
-A TypeScript Playwright starter framework for QA engineers and engineering teams who want a structured foundation for browser UI and REST API automation.
+A TypeScript Playwright starter framework for QA engineers, SDETs and independent automation consultants who want a structured foundation for browser UI and REST API automation.
 
 ## Included files and capabilities
 
@@ -32,15 +32,24 @@ Node.js 22+, npm, basic TypeScript/JavaScript knowledge and familiarity with web
 - Not a hosted testing service or dashboard.
 - Not a universal framework that can test an unknown application without adaptation.
 - Not a substitute for test strategy, application-specific selectors, API schemas or test data.
-- Does not include private application integrations, custom implementation, ongoing support or guaranteed defect-free operation.
+- Does not include private application integrations, custom implementation, consulting or guaranteed defect-free operation.
 
-## Suggested pricing for validation
+## Individual commercial licence
 
-- Launch price: USD 29–39 for an individual-use licence.
-- Team licence: USD 79–99 only after team terms and support boundaries are finalized.
+One named individual may use and modify TestForge for personal work, internal business projects and multiple client projects on which that individual personally works. The purchaser may deliver application-specific tests, automation code and reports to clients, but may not share or transfer the TestForge starter package or substantial framework source code to clients or other individuals. One licence is one individual seat; it is not a team licence.
 
-These are hypotheses for market testing, not proven willingness-to-pay or sales forecasts.
+## Updates and support
+
+Includes maintenance releases and bug fixes for the purchased major version for the lifetime of that major version. Future major versions are not automatically included. Support covers reproducible defects in TestForge itself; it excludes application-specific implementation, consulting and guaranteed response times.
+
+## Approved launch price
+
+USD 29 — individual commercial-use licence.
+
+## Storefront
+
+Gumroad only. Do not list on other storefronts under this release plan.
 
 ## Release status
 
-Development preview. Do not list as a production-verified commercial release until the release checklist is complete, the full suite has passed on supported browsers, a reproducible dependency lockfile is included, and the commercial licence and refund policy have been reviewed.
+Do not list as a production-verified commercial release until the release checklist is complete, the full suite has passed on supported browsers, a reproducible dependency lockfile is included, the commercial terms have been reviewed and the buyer download flow has been tested.

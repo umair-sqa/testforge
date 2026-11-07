@@ -43,14 +43,20 @@ test.describe('Shop API', () => {
   });
 
   test('@regression rejects an unknown product', async ({ apiClient }) => {
-    const response = await apiClient.post('/orders', { items: [{ productId: 'unknown', quantity: 1 }] });
+    const response = await apiClient.post('/orders', {
+      items: [{ productId: 'unknown', quantity: 1 }],
+    });
     expect(response.status()).toBe(404);
     expect(await response.json()).toEqual({ error: 'Unknown product: unknown' });
   });
 
   test('@regression rejects an invalid quantity', async ({ apiClient }) => {
-    const response = await apiClient.post('/orders', { items: [{ productId: 'p-100', quantity: 0 }] });
+    const response = await apiClient.post('/orders', {
+      items: [{ productId: 'p-100', quantity: 0 }],
+    });
     expect(response.status()).toBe(400);
-    expect(await response.json()).toEqual({ error: 'Each item requires a valid productId and quantity between 1 and 20' });
+    expect(await response.json()).toEqual({
+      error: 'Each item requires a valid productId and quantity between 1 and 20',
+    });
   });
 });

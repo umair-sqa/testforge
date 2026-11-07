@@ -1,47 +1,94 @@
 <!doctype html>
 <html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>TestForge Demo Shop</title>
-  <style>
-    :root { color-scheme: light; font: 16px system-ui, sans-serif; color: #17202a; background: #f4f6f8; }
-    * { box-sizing: border-box; }
-    body { display: grid; min-height: 100vh; place-items: center; margin: 0; padding: 1rem; }
-    main { width: min(420px, 100%); padding: 2rem; border-radius: 14px; background: white; box-shadow: 0 12px 40px #17202a18; }
-    label { display: block; margin: 1rem 0 .35rem; }
-    input { width: 100%; padding: .75rem; border: 1px solid #cbd5e1; border-radius: 7px; }
-    button { width: 100%; margin-top: 1.2rem; padding: .8rem; border: 0; border-radius: 7px; background: #17202a; color: white; cursor: pointer; }
-    [role=alert] { min-height: 1.2rem; color: #b42318; }
-    .muted { color: #64748b; }
-  </style>
-</head>
-<body>
-  <main>
-    <h1>Sign in</h1>
-    <p class="muted">TestForge sample application</p>
-    <form id="login-form">
-      <label for="email">Email</label>
-      <input id="email" name="email" type="email" autocomplete="username" required>
-      <label for="password">Password</label>
-      <input id="password" name="password" type="password" autocomplete="current-password" required>
-      <div role="alert" aria-live="polite"></div>
-      <button type="submit">Sign in</button>
-    </form>
-  </main>
-  <script>
-    document.querySelector('#login-form').addEventListener('submit', (event) => {
-      event.preventDefault();
-      const email = document.querySelector('#email').value.trim();
-      const password = document.querySelector('#password').value;
-      if (email === 'demo@example.com' && password === 'ChangeMe123!') {
-        localStorage.setItem('testforge-authenticated', 'true');
-        localStorage.setItem('testforge-user', email);
-        window.location.assign('/dashboard');
-      } else {
-        document.querySelector('[role="alert"]').textContent = 'Invalid email or password';
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>TestForge Demo Shop</title>
+    <style>
+      :root {
+        color-scheme: light;
+        font: 16px system-ui, sans-serif;
+        color: #17202a;
+        background: #f4f6f8;
       }
-    });
-  </script>
-</body>
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        display: grid;
+        min-height: 100vh;
+        place-items: center;
+        margin: 0;
+        padding: 1rem;
+      }
+      main {
+        width: min(420px, 100%);
+        padding: 2rem;
+        border-radius: 14px;
+        background: white;
+        box-shadow: 0 12px 40px #17202a18;
+      }
+      label {
+        display: block;
+        margin: 1rem 0 0.35rem;
+      }
+      input {
+        width: 100%;
+        padding: 0.75rem;
+        border: 1px solid #cbd5e1;
+        border-radius: 7px;
+      }
+      button {
+        width: 100%;
+        margin-top: 1.2rem;
+        padding: 0.8rem;
+        border: 0;
+        border-radius: 7px;
+        background: #17202a;
+        color: white;
+        cursor: pointer;
+      }
+      [role='alert'] {
+        min-height: 1.2rem;
+        color: #b42318;
+      }
+      .muted {
+        color: #64748b;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <h1>Sign in</h1>
+      <p class="muted">TestForge sample application</p>
+      <form id="login-form">
+        <label for="email">Email</label>
+        <input id="email" name="email" type="email" autocomplete="username" required>
+        <label for="password">Password</label>
+        <input
+          id="password"
+          name="password"
+          type="password"
+          autocomplete="current-password"
+          required
+        >
+        <div role="alert" aria-live="polite"></div>
+        <button type="submit">Sign in</button>
+      </form>
+    </main>
+    <script>
+      document.querySelector('#login-form').addEventListener('submit', (event) => {
+        event.preventDefault();
+        const email = document.querySelector('#email').value.trim();
+        const password = document.querySelector('#password').value;
+        if (email === 'demo@example.com' && password === 'ChangeMe123!') {
+          localStorage.setItem('testforge-authenticated', 'true');
+          localStorage.setItem('testforge-user', email);
+          window.location.assign('/dashboard');
+        } else {
+          document.querySelector('[role="alert"]').textContent = 'Invalid email or password';
+        }
+      });
+    </script>
+  </body>
 </html>

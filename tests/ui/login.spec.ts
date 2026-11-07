@@ -19,7 +19,7 @@ test.describe('Login', () => {
 
   test('@regression marks both credential fields as required', async ({ loginPage }) => {
     await loginPage.goto();
-    await expect(loginPage.emailInput).toBeRequired();
-    await expect(loginPage.passwordInput).toBeRequired();
+    await expect(loginPage.emailInput).toHaveAttribute('required', '');
+    await expect(loginPage.passwordInput).toHaveAttribute('required', '');
   });
 });

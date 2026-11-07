@@ -1,4 +1,4 @@
-# TestForge storefront copy
+# TestForge Gumroad listing copy
 
 ## Product title
 
@@ -6,7 +6,7 @@ TestForge Professional — TypeScript Playwright UI & API Automation Framework
 
 ## Short description
 
-A documented, extensible Playwright Test framework with TypeScript, reusable authentication, UI and REST API examples, a sample shop application, cross-browser configuration, CI workflows and failure diagnostics.
+A documented TypeScript + Playwright starter framework with reusable authentication, UI and REST API examples, a local demo shop, cross-browser projects, CI configuration and failure diagnostics.
 
 ## Long description
 
@@ -41,30 +41,23 @@ QA automation engineers, SDETs and consultants who already know basic JavaScript
 
 ### Important limitations
 
-TestForge is a source-code starter kit, not a hosted service or a universal drop-in test suite. You must adapt selectors, login flows, API endpoints, schemas, test data and environment settings to your application. It does not include custom integration work, unlimited support, or a guarantee that it will work unchanged with your application.
+TestForge is a source-code starter kit, not a hosted service or a universal drop-in test suite. You must adapt selectors, login flows, API endpoints, schemas, test data and environment settings to your application. It does not include custom integration work, consulting or a guarantee that it will work unchanged with your application.
 
 ### Licence
 
-One individual purchaser may use and modify the package for personal projects and internal business work. Redistribution, resale, sublicensing or sharing the source package with other users is not permitted. Third-party dependencies retain their own licences.
+One named individual may use TestForge for personal work, internal business projects and multiple client projects on which they personally work. Client-specific test deliverables may be delivered to clients, but the TestForge starter package and substantial framework source may not be shared or transferred. One licence covers one individual, not a team.
 
-### Support and updates
+### Updates and support
 
-Purchase includes access to published product updates and bug fixes under the stated product update policy. It does not include application-specific implementation, consulting, custom features or a guaranteed support response time.
+Includes maintenance releases and bug fixes for the purchased major version for the lifetime of that major version. Future major versions are not included automatically. Product support covers reproducible TestForge defects, not application-specific implementation or consulting.
 
-## Gumroad suggested fields
+## Gumroad product settings
 
 - Product type: Digital product / downloadable files
-- Price: USD 39 (launch price hypothesis)
+- Price: USD 29
 - File: Approved `TestForge-Professional-v1.0.0.zip`
 - Summary: TypeScript Playwright framework starter for UI and REST API automation
-- Call to action: Get the framework
-
-## Lemon Squeezy suggested fields
-
-- Product type: One-time digital product
-- Price: USD 39 (launch price hypothesis)
-- Fulfilment: Downloadable release archive
 - Licence: Individual commercial-use licence
-- Variant: Professional v1.0.0
+- Storefront: Gumroad only
 
-Do not copy this listing into a live storefront until the release checklist is complete and the final package is approved.
+Do not publish this listing until the release checklist is complete and the final package is approved.
