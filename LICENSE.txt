@@ -1,0 +1,30 @@
+TESTFORGE INDIVIDUAL COMMERCIAL-USE LICENCE — DRAFT
+
+Copyright (c) 2026 TestForge. All rights reserved.
+
+1. Licence grant
+After successful purchase, the purchaser receives a non-exclusive, non-transferable licence for one named individual to install, use, modify and create derivative works from the TestForge package for personal projects and internal business projects in which that individual participates.
+
+2. Restrictions
+The purchaser must not:
+- share, publish, sublicense, rent, lease, resell or redistribute the package or substantial portions of its source code;
+- provide the package to other individuals as a framework template or competing product;
+- remove copyright or licence notices;
+- use the package as the basis of a product whose principal value is redistributing substantially similar starter-framework source code.
+
+3. Ownership and third-party software
+The licence does not transfer ownership of Playwright, Node.js, TypeScript or any third-party dependency. Each third-party component remains governed by its own licence. The purchaser is responsible for reviewing third-party licences before redistributing any derivative work.
+
+4. Updates and support
+Updates and bug fixes are governed by the separate TestForge Support and Updates Policy supplied with the purchase. This licence does not include custom implementation, consulting, application-specific debugging or a guaranteed response time.
+
+5. No warranty
+The package is provided "as is" to the maximum extent permitted by applicable law. No guarantee is made that the starter kit will work unchanged with a purchaser's application, infrastructure or environment. Nothing in this clause excludes rights that cannot legally be excluded.
+
+6. Termination
+The licence terminates if the purchaser materially breaches its restrictions. Upon termination, the purchaser must stop using and destroy copies of the package, except where retention is required by law.
+
+7. Governing terms
+The final governing-law, dispute-resolution and consumer-rights provisions must be completed and reviewed by the seller before commercial publication.
+
+DRAFT — NOT LEGAL ADVICE. Obtain legal review before making this licence binding.

@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>TestForge Demo Shop</title>
+  <style>
+    :root{font:16px system-ui,sans-serif;color:#17202a;background:#f4f6f8}*{box-sizing:border-box}body{margin:0;padding:2rem}
+    header,main{max-width:900px;margin:0 auto}header{display:flex;justify-content:space-between;align-items:center;margin-bottom:1.5rem}
+    main{background:white;padding:2rem;border-radius:14px;box-shadow:0 12px 40px #17202a18}.products{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:1rem}
+    article{border:1px solid #dbe2ea;border-radius:10px;padding:1rem}button{border:0;border-radius:7px;background:#17202a;color:white;padding:.7rem 1rem;cursor:pointer}button:disabled{opacity:.5;cursor:not-allowed}
+    .muted{color:#64748b}.status{min-height:1.5rem;margin:.75rem 0}.cart{margin-top:2rem;padding-top:1rem;border-top:1px solid #dbe2ea}li{margin:.4rem 0}
+  </style>
+</head>
+<body>
+  <header><strong>TestForge Demo Shop</strong><div><span id="user-email" class="muted"></span> <button id="sign-out" type="button">Sign out</button></div></header>
+  <main>
+    <h1>Products</h1><p class="muted">A sample storefront for demonstrating reliable UI and API automation patterns.</p>
+    <p id="shop-status" class="status" role="status" aria-live="polite"></p>
+    <section id="products" class="products" aria-label="Product catalogue"></section>
+    <section class="cart" aria-label="Shopping cart"><h2>Your cart (<span id="cart-count">0</span>)</h2><ul id="cart-items"></ul><p>Total: <strong id="cart-total">$0.00</strong></p><button id="checkout" type="button" disabled>Place order</button><p id="order-status" role="status" aria-live="polite"></p></section>
+  </main>
+  <script>
+    if(localStorage.getItem('testforge-authenticated')!=='true'){location.replace('/login')}
+    document.querySelector('#user-email').textContent=localStorage.getItem('testforge-user')||'';
+    const cart=new Map();let products=[];
+    const money=value=>new Intl.NumberFormat('en-US',{style:'currency',currency:'USD'}).format(value);
+    async function loadProducts(){const response=await fetch('/api/products');if(!response.ok)throw new Error('Could not load products');products=await response.json();renderProducts()}
+    function renderProducts(){const root=document.querySelector('#products');root.replaceChildren();for(const product of products){const card=document.createElement('article');const title=document.createElement('h2');title.textContent=product.name;const description=document.createElement('p');description.textContent=product.description;const price=document.createElement('p');price.textContent=money(product.price);const button=document.createElement('button');button.type='button';button.textContent='Add to cart';button.setAttribute('aria-label',`Add ${product.name} to cart`);button.addEventListener('click',()=>{cart.set(product.id,(cart.get(product.id)||0)+1);renderCart()});card.append(title,description,price,button);root.append(card)}}
+    function renderCart(){const list=document.querySelector('#cart-items');list.replaceChildren();let count=0,total=0;for(const [id,quantity] of cart){const product=products.find(item=>item.id===id);if(!product)continue;count+=quantity;total+=product.price*quantity;const item=document.createElement('li');item.textContent=`${product.name} × ${quantity}`;list.append(item)}document.querySelector('#cart-count').textContent=String(count);document.querySelector('#cart-total').textContent=money(total);document.querySelector('#checkout').disabled=count===0}
+    document.querySelector('#checkout').addEventListener('click',async()=>{const items=[...cart].map(([productId,quantity])=>({productId,quantity}));const response=await fetch('/api/orders',{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify({items})});const payload=await response.json();if(!response.ok){document.querySelector('#order-status').textContent=payload.error||'Could not place order';return}document.querySelector('#order-status').textContent=`Order ${payload.id} placed successfully`;cart.clear();renderCart()});
+    document.querySelector('#sign-out').addEventListener('click',()=>{localStorage.removeItem('testforge-authenticated');localStorage.removeItem('testforge-user');location.assign('/login')});
+    loadProducts().catch(error=>{document.querySelector('#shop-status').textContent=error.message});
+  </script>
+</body></html>
